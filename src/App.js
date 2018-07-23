@@ -5,6 +5,7 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import SignIn from "./components/SignIn/SignIn";
+import Alert from "./components/Alert/Alert";
 import "./App.css";
 import Particles from "react-particles-js";
 import Clarifai from "clarifai";
@@ -100,7 +101,10 @@ class App extends Component {
             <FaceRecognition box={box} imageUrl={imageUrl} />
           </div>
         ) : route === "signin" ? (
+          <div>
           <SignIn onRouteChange={this.onRouteChange} />
+          <Alert/>
+          </div>
         ) : (
           <Register onRouteChange={this.onRouteChange} />
         )}
